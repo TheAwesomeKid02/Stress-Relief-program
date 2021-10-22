@@ -1,0 +1,30 @@
+body {
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+}
+
+#txt {
+	outline: none;
+	border-radius: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+.btnn {
+	padding: 10px 10px;
+	border-radius: 10px;
+}
+
+.btnn:hover {
+	padding: 15px 15px;
+	cursor: pointer;
+	background: #00ffff;
+	border: 1px solid blue;
+	transition: .25s;
+}
