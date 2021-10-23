@@ -1,5 +1,16 @@
 let btnClicks = 0;
 
+function say(text) {
+	const utterance = new SpeechSynthesisUtterance(text);
+	utterance.rate = 1;
+	speechSynthesis.speak(utterance);
+	const btn = document.getElementById('btn');
+	utterance.addEventListener('end', () => {
+		btn.disabled = false;
+	});
+	btn.disabled = true;
+}
+
 const btn_append = document.createElement('div');
 document.body.appendChild(btn_append);
 btn_append.innerHTML = '<button id="btn" class="btnn">Feel Happy</button>';
@@ -12,17 +23,6 @@ function webcamOpen() {
 		stream => video.srcObject = stream,
 		err => console.error(err)
 	)
-}
-
-function say(text) {
-	const utterance = new SpeechSynthesisUtterance(text);
-	utterance.rate = 1;
-	speechSynthesis.speak(utterance);
-	const btn = document.getElementById('btn');
-	utterance.addEventListener('end', () => {
-		btn.disabled = false;
-	});
-	btn.disabled = true;
 }
 
 btn.addEventListener('click', () => {
